@@ -1,0 +1,1 @@
+<!-- docker exec -it bullmq-postgres psql -U bullmq -d bullmq_test -->

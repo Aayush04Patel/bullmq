@@ -1,0 +1,22 @@
+services:
+
+  redis:
+    image: redis:7
+    container_name: bullmq-redis
+    ports:
+      - "6380:6379"
+  
+  postgres:
+    image: postgres:16
+    container_name: bullmq-postgres
+    environment:
+      POSTGRES_USER: bullmq
+      POSTGRES_PASSWORD: bullmq
+      POSTGRES_DB: bullmq_test
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgressql/data
+  
+volumes:
+  postgres_data:
